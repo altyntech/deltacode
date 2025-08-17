@@ -1,0 +1,366 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title></title>
+    
+    <!-- Open Graph метатеги для предпросмотра в Telegram -->
+    <meta property="og:title" content="">
+    <meta property="og:description" content="12 марта 2024 от Rza(bakinskiy19)
+
+Аккаунт этого пользователя рассматривается и ведёт учёт в архив внутренних дел КР МВД, так же аккаунт защищается правоохранительными органами, все чаты не имеют отношения к пользователю.">
+   <meta property="og:image" content="https://altyntech.github.io/my-imagesing/Kyrgyzstan.png">
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://altyntech.github.io/my-imagesing/Kyrgyzstan.png">
+    
+    <!-- Подключение стилей -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700&display=swap" rel="stylesheet">
+    
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            background: linear-gradient(135deg, #0a0a0a, #1a1a1a);
+            color: #fff;
+            font-family: 'Montserrat', sans-serif;
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            padding: 20px;
+            text-align: center;
+            overflow-x: hidden;
+            position: relative;
+        }
+        
+        /* Анимированный фон */
+        .background-animation {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            z-index: -1;
+            opacity: 0.3;
+        }
+        
+        .particle {
+            position: absolute;
+            border-radius: 50%;
+            background: rgba(200, 0, 0, 0.4);
+            box-shadow: 0 0 10px rgba(255, 0, 0, 0.5);
+            animation: float 15s infinite linear;
+        }
+        
+        @keyframes float {
+            0% {
+                transform: translateY(0) translateX(0) rotate(0deg);
+                opacity: 0;
+            }
+            10% {
+                opacity: 1;
+            }
+            90% {
+                opacity: 1;
+            }
+            100% {
+                transform: translateY(-100vh) translateX(100px) rotate(360deg);
+                opacity: 0;
+            }
+        }
+        
+        /* Главный контейнер */
+        .container {
+            max-width: 800px;
+            width: 100%;
+            padding: 30px;
+            background: rgba(20, 20, 20, 0.85);
+            border-radius: 20px;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
+            backdrop-filter: blur(10px);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            position: relative;
+            overflow: hidden;
+        }
+        
+        /* Анимированная рамка */
+        .container::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 4px;
+            background: linear-gradient(90deg, #ff0000, #b30000, #ff0000);
+            background-size: 200% 200%;
+            animation: gradient 3s ease infinite;
+        }
+        
+        @keyframes gradient {
+            0% { background-position: 0% 50%; }
+            50% { background-position: 100% 50%; }
+            100% { background-position: 0% 50%; }
+        }
+        
+        /* Новая иконка герба (без круглой рамки) */
+        .emblem-icon {
+            margin: 0 auto 30px;
+            width: 180px;
+            animation: fadeIn 1s forwards;
+        }
+        
+        .emblem-icon img {
+            width: 100%;
+            height: auto;
+            filter: drop-shadow(0 0 10px rgba(255, 255, 255, 0.7));
+        }
+        
+        /* Заголовок */
+        .title {
+            font-size: 2.5rem;
+            margin-bottom: 25px;
+            color: #fff;
+            position: relative;
+            display: inline-block;
+            animation: title-pulse 2s infinite;
+        }
+        
+        .title-icon {
+            color: #ff0000;
+            margin: 0 10px;
+            text-shadow: 0 0 15px rgba(255, 0, 0, 0.9);
+            animation: icon-pulse 1.5s infinite alternate;
+        }
+        
+        @keyframes title-pulse {
+            0% { transform: scale(1); }
+            50% { transform: scale(1.05); }
+            100% { transform: scale(1); }
+        }
+        
+        @keyframes icon-pulse {
+            0% { transform: scale(1); opacity: 0.8; }
+            100% { transform: scale(1.2); opacity: 1; }
+        }
+        
+        /* Дата */
+        .date {
+            font-size: 1.4rem;
+            margin-bottom: 30px;
+            color: #ffcc00;
+            font-weight: 500;
+            animation: fadeIn 1.5s ease-out;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 10px;
+        }
+        
+
+        @keyframes spin {
+            0% { transform: rotate(0deg); }
+            100% { transform: rotate(360deg); }
+        }
+        
+        /* Сообщение */
+        .message {
+            font-size: 1.3rem;
+            line-height: 1.7;
+            max-width: 700px;
+            margin: 0 auto;
+            font-family: 'Montserrat', sans-serif;
+            font-weight: 300;
+            text-align: center;
+            position: relative;
+            padding: 25px;
+            background: rgba(30, 30, 30, 0.6);
+            border-radius: 15px;
+            border-left: 3px solid #ff0000;
+            animation: message-appear 1s ease-out;
+        }
+        
+        .message p {
+            margin-bottom: 15px;
+            position: relative;
+            padding-left: 30px;
+            text-align: left;
+        }
+        
+        .message p::before {
+            content: '•';
+            color: #ff0000;
+            font-size: 1.8rem;
+            position: absolute;
+            left: 0;
+            top: -5px;
+        }
+        
+        .message p:last-child {
+            margin-bottom: 0;
+        }
+        
+        @keyframes message-appear {
+            0% { opacity: 0; transform: translateY(20px); }
+            100% { opacity: 1; transform: translateY(0); }
+        }
+        
+        /* Анимации появления */
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(20px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+        
+        .animated {
+            opacity: 0;
+            animation: fadeIn 1s forwards;
+        }
+        
+        .delay-1 { animation-delay: 0.2s; }
+        .delay-2 { animation-delay: 0.4s; }
+        .delay-3 { animation-delay: 0.6s; }
+        .delay-4 { animation-delay: 0.8s; }
+        .delay-5 { animation-delay: 1.0s; }
+        
+        /* Иконки защиты */
+        .security-icons {
+            display: flex;
+            justify-content: center;
+            gap: 25px;
+            margin-top: 30px;
+        }
+        
+        .security-icon {
+            width: 70px;
+            height: 70px;
+            background: rgba(139, 0, 0, 0.2);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 2rem;
+            color: #ffcc00;
+            border: 2px solid rgba(255, 0, 0, 0.3);
+            animation: icon-float 3s infinite ease-in-out;
+        }
+        
+        .security-icon:nth-child(1) { animation-delay: 0s; }
+        .security-icon:nth-child(2) { animation-delay: 0.5s; }
+        .security-icon:nth-child(3) { animation-delay: 1s; }
+        
+        @keyframes icon-float {
+            0% { transform: translateY(0); }
+            50% { transform: translateY(-15px); }
+            100% { transform: translateY(0); }
+        }
+        
+        /* Подпись */
+        .footer {
+            margin-top: 30px;
+            color: #aaa;
+            font-size: 0.9rem;
+            animation: fadeIn 2s;
+        }
+        
+        /* Адаптивность */
+        @media (max-width: 768px) {
+            .title { font-size: 2rem; }
+            .date { font-size: 1.2rem; }
+            .message { font-size: 1.1rem; padding: 15px; }
+            .emblem-icon { width: 150px; }
+            .security-icons { gap: 15px; }
+            .security-icon { width: 50px; height: 50px; font-size: 1.5rem; }
+        }
+        
+        @media (max-width: 480px) {
+            .title { font-size: 1.7rem; }
+            .date { font-size: 1rem; }
+            .message { font-size: 1rem; }
+            .emblem-icon { width: 120px; }
+            .container { padding: 20px 15px; }
+        }
+    </style>
+</head>
+<body>
+    <!-- Анимированный фон -->
+    <div class="background-animation" id="particles"></div>
+    
+    <div class="container">
+        <!-- Новая иконка герба (без круглой рамки) -->
+        <div class="emblem-icon animated">
+            <img src="https://altyntech.github.io/my-imagesing/Kyrgyzstan.png" alt="Герб Кыргызстана">
+        </div>
+        
+        <h1 class="title animated delay-1">
+            <i class="fas fa-exclamation-circle title-icon"></i>
+            Информация
+            <i class="fas fa-exclamation-circle title-icon"></i>
+        </h1>
+        
+        <div class="message animated delay-3">
+            <p>Аккаунт этого пользователя рассматривается и ведёт учёт в архив внутренних дел КР МВД,</p>
+            <p>Так же аккаунт защищается правоохранительными органами,</p>
+            <p>Все чаты не имеют отношения к пользователю.</p>
+        </div>
+        
+        <div class="security-icons animated delay-4">
+            <div class="security-icon">
+                <i class="fas fa-shield-alt"></i>
+            </div>
+            <div class="security-icon">
+                <i class="fas fa-user-lock"></i>
+            </div>
+            <div class="security-icon">
+                <i class="fas fa-file-contract"></i>
+            </div>
+        </div>
+    </div>
+    
+    <div class="footer">
+        Официальная информация • Защищено правоохранительными органами Кыргызстана • Разработана «DeltaCode» (@DELTACODE777)
+    </div>
+    
+    <script>
+        // Создание анимированных частиц фона
+        function createParticles() {
+            const container = document.getElementById('particles');
+            const particleCount = 30;
+            
+            for (let i = 0; i < particleCount; i++) {
+                const particle = document.createElement('div');
+                particle.classList.add('particle');
+                
+                // Случайный размер
+                const size = Math.random() * 20 + 5;
+                particle.style.width = `${size}px`;
+                particle.style.height = `${size}px`;
+                
+                // Случайное положение
+                particle.style.left = `${Math.random() * 100}%`;
+                particle.style.top = `${Math.random() * 100 + 100}%`;
+                
+                // Случайная задержка анимации
+                particle.style.animationDelay = `${Math.random() * 15}s`;
+                
+                container.appendChild(particle);
+            }
+        }
+        
+        // Инициализация после загрузки страницы
+        document.addEventListener('DOMContentLoaded', () => {
+            createParticles();
+            
+            // Добавление небольших случайных задержек для анимации элементов
+            document.querySelectorAll('.animated').forEach((el, index) => {
+                el.style.animationDelay = `${index * 0.15}s`;
+            });
+        });
+    </script>
+</body>
+</html>
